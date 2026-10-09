@@ -1,0 +1,92 @@
+---
+const navLinks = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#sobre-nosotros', label: 'Sobre nosotros' },
+  { href: '#categorias', label: 'Categorías' },
+  { href: '#colaboradores', label: 'Colaboradores' },
+  { href: '#calendario', label: 'Calendario' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b-4 border-ink bg-cream/95 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="#inicio" class="group flex items-center gap-3" aria-label="Feria en Territorio — inicio">
+      <svg width="44" height="44" viewBox="0 0 48 48" class="transition-transform duration-300 group-hover:rotate-12" aria-hidden="true">
+        <circle cx="24" cy="24" r="11" fill="#FFC53D" stroke="#2F3A2F" stroke-width="3" />
+        <g stroke="#2F3A2F" stroke-width="3" stroke-linecap="round">
+          <line x1="24" y1="4" x2="24" y2="10" />
+          <line x1="24" y1="38" x2="24" y2="44" />
+          <line x1="4" y1="24" x2="10" y2="24" />
+          <line x1="38" y1="24" x2="44" y2="24" />
+          <line x1="9.9" y1="9.9" x2="14" y2="14" />
+          <line x1="34" y1="34" x2="38.1" y2="38.1" />
+          <line x1="9.9" y1="38.1" x2="14" y2="34" />
+          <line x1="34" y1="14" x2="38.1" y2="9.9" />
+        </g>
+        <circle cx="24" cy="24" r="5" fill="#E8862E" />
+      </svg>
+      <span class="font-display text-xl font-bold leading-none sm:text-2xl">
+        Feria en<br class="sm:hidden" /> Territorio
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Navegación principal">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-full px-4 py-2 font-display text-base font-bold text-ink transition-colors hover:bg-sun-light"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href="#calendario" class="btn-primary ml-3 !px-5 !py-2 !text-base">¡Participa!</a>
+    </nav>
+
+    <button
+      id="menu-btn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="menu-mobile"
+      class="rounded-full border-4 border-ink bg-paper p-2 shadow-[3px_3px_0_0_#2F3A2F] transition-transform hover:-translate-y-0.5 lg:hidden"
+      aria-label="Abrir menú"
+    >
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2F3A2F" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="menu-mobile" class="hidden border-t-4 border-ink bg-paper lg:hidden">
+    <nav class="flex flex-col gap-1 px-4 py-4" aria-label="Navegación móvil">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-link rounded-2xl px-4 py-3 font-display text-lg font-bold hover:bg-sun-light"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href="#calendario" class="mobile-link btn-primary mt-2">¡Participa!</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu-mobile');
+  btn?.addEventListener('click', () => {
+    const isHidden = menu.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isHidden));
+    btn.setAttribute('aria-label', isHidden ? 'Abrir menú' : 'Cerrar menú');
+  });
+  menu?.querySelectorAll('.mobile-link').forEach((link) =>
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>

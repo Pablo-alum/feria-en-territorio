@@ -1,0 +1,55 @@
+---
+---
+
+<section id="sobre-nosotros" class="bg-paper">
+  <div class="mx-auto grid max-w-6xl items-center gap-14 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
+    <div>
+      <span class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#E8862E" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+        Sobre nosotros
+      </span>
+      <h2 class="mt-5 font-display text-4xl font-extrabold leading-tight sm:text-5xl">
+        Una feria con <span class="text-grass-dark">historia</span>,
+        <span class="text-clay">color</span> y <span class="text-sky-dark">comunidad</span>
+      </h2>
+      <div class="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted">
+        <p>
+          Feria en Territorio nació como un encuentro de vecinos que querían acercar
+          los productos naturales y artesanales a su comunidad. Hoy somos un espacio
+          donde productores, emprendedores y familias comparten una misma idea:
+          consumir consciente, cuidar el entorno y pasarla bien juntos.
+        </p>
+        <p>
+          En cada edición vas a encontrar alimentos orgánicos, frutas y verduras de
+          estación, panadería artesanal, cosmética natural, plantas, semillas e
+          infusiones. Cada puesto tiene su propia historia y el esfuerzo de personas
+          que trabajan con dedicación y respeto por la tierra.
+        </p>
+      </div>
+
+      <ul class="mt-8 flex flex-wrap gap-3">
+        {
+          ['Entrada libre', 'Pet friendly', 'Talleres infantiles', 'Música en vivo'].map((chip) => (
+            <li class="rounded-full border-2 border-ink bg-sun-light px-4 py-1.5 font-display text-sm font-bold">{chip}</li>
+          ))
+        }
+      </ul>
+
+      <a href="#colaboradores" class="btn-sun mt-10">Conocé a quienes hacen la feria</a>
+    </div>
+
+    <!-- Collage ilustrado -->
+    <div class="relative mx-auto w-full max-w-md">
+      <div class="rotate-3 play-card overflow-hidden p-3">
+        <img src="/img/frutas.svg" alt="Canasta con frutas frescas de productores locales" class="w-full rounded-3xl" loading="lazy" />
+        <p class="px-2 py-3 text-center font-display font-bold text-muted">Frutas recién cosechadas</p>
+      </div>
+      <div class="absolute -bottom-10 -left-4 w-40 -rotate-6 play-card overflow-hidden p-2 sm:-left-10 sm:w-48">
+        <img src="/img/plantas.svg" alt="Plantas en macetas pintadas a mano" class="w-full rounded-2xl" loading="lazy" />
+      </div>
+      <div class="absolute -right-3 -top-8 animate-wiggle rounded-full border-4 border-ink bg-berry px-5 py-2 font-display text-sm font-bold text-white shadow-[4px_4px_0_0_#2F3A2F] sm:-right-8">
+        ¡Desde 2015!
+      </div>
+    </div>
+  </div>
+</section>

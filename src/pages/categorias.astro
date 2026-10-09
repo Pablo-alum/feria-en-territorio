@@ -1,0 +1,98 @@
+---
+import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.vue";
+import CatalogoCategorias from "../components/CatalogoCategorias.vue";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explorá productos naturales, artesanías y servicios de la Feria en Territorio."
+    />
+    <title>Categorías | Feria en Territorio</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a href="/" class="brand">Feria en Territorio</a>
+
+        <nav class="main-navigation" aria-label="Navegación principal">
+          <a href="/categorias" class="btn" aria-current="page">
+            Categorías
+          </a>
+          <a href="/#about" class="btn">Sobre nosotros</a>
+          <a href="/#collaborators" class="btn">Integrantes</a>
+          <ThemeToggle client:load />
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section catalog-hero">
+        <div class="container">
+          <span class="eyebrow">Conocé nuestra comunidad</span>
+          <h1>Explorá el catálogo</h1>
+          <p>
+            Productos, creaciones y servicios de quienes forman
+            parte de la Feria en Territorio.
+          </p>
+        </div>
+      </section>
+
+      <CatalogoCategorias client:load />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <span class="footer-brand">Feria en Territorio</span>
+          <p>Natural · Local · Artesanal</p>
+        </div>
+
+        <div class="footer-links">
+          <div>
+            <span>Explorar</span>
+            <a href="/categorias">Categorías</a>
+            <a href="/#collaborators">Integrantes</a>
+          </div>
+
+          <div>
+            <span>Comunidad</span>
+            <a href="#">Instagram</a>
+            <a href="#">Contacto</a>
+          </div>
+
+          <div>
+            <span>Información</span>
+            <a href="/#about">Sobre nosotros</a>
+            <a href="/">Inicio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .catalog-hero {
+    padding-block: clamp(3rem, 8vw, 6rem) 2rem;
+  }
+
+  .catalog-hero h1 {
+    margin: 0.6rem 0 1rem;
+    color: var(--color-text);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  .catalog-hero p {
+    max-width: 620px;
+    color: var(--color-soft);
+    line-height: 1.7;
+  }
+</style>

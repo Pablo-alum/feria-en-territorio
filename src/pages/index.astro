@@ -1,11 +1,245 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.vue";
+import Categories from '../components/Categorias.vue'
+import Carrusel from '../components/Carousel.vue'
+import Collaborators from '../components/Collaborators.vue'
+import FeriaCalendar from '../components/FeriaCalendar.vue'
 ---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
 
-<Layout>
-	<Welcome />
-</Layout>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="description"
+      content="Feria en Territorio — productos naturales, artesanales y emprendimientos locales."
+    />
+
+    <title>Feria en Territorio</title>
+  </head>
+
+  <body>
+
+    <!-- =========================================
+         ENCABEZADO
+    ========================================== -->
+
+    <header class="site-header">
+      <div class="container header-content">
+
+        <a href="/" class="brand">
+          Feria en Territorio
+        </a>
+
+        <nav class="main-navigation" aria-label="Navegación principal">
+            <a href="/categorias" class="btn">Categorías</a>
+          <a href="#about" class="btn">Sobre nosotros</a>
+          <a href="#collaborators" class="btn">Integrantes</a>
+      <!-- Selector de tema -->
+        <ThemeToggle client:load />
+        </nav>
+
+      </div>
+    </header>
+
+
+    <main>
+
+      <!-- =========================================
+           HERO / PRESENTACIÓN
+      ========================================== -->
+
+      <section class="hero section">
+
+        <div class="container">
+
+          <div class="hero-image image-placeholder">
+              <img src="../../public/img/comun a-3.jpg.jpeg" alt="">
+          </div>
+
+
+          <div class="hero-content">
+
+            <span class="eyebrow">
+              Natural · Local · Artesanal
+            </span>
+
+            <h1>
+              Feria en Territorio
+            </h1>
+
+            <p>
+              Un espacio creado para celebrar la naturaleza,
+              el trabajo artesanal y el consumo consciente.
+            </p>
+
+            <p>
+              Encontrá productos naturales, alimentos,
+              hierbas, semillas, objetos artesanales y
+              propuestas de productores locales.
+            </p>
+
+            <a href="#categories" class="primary-button">
+              Conocé la feria
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================================
+           CATEGORÍAS
+      ========================================== -->
+
+      <Categories client:load />
+      
+      <!-- =========================================
+           GALERÍA
+      ========================================== -->
+
+      <Carrusel client:load />
+      <!-- =========================================
+           COLABORADORES
+      ========================================== -->
+
+      <Collaborators client:load />
+      <FeriaCalendar client:load />
+      <!-- =========================================
+           PARTICIPANTES
+      ========================================== -->
+
+      <section class="participants section">
+
+        <div class="container">
+
+          <div class="section-heading">
+
+            <span class="eyebrow">
+              Comunidad
+            </span>
+
+            <h2>
+              Participantes
+            </h2>
+
+          </div>
+
+
+          
+        <div class="participants-list">
+          <span>● Mica (Cosmética de la Tierra)</span>
+          <span>● Ana (Sabores del Monte)</span>
+          <span>● Gloria (Semillas y Raíces)</span>
+          <span>● Mica Burdes (Trazos del Territorio)</span>
+        
+          <span>● José (Manos de la Tierra)</span>
+          <span>● Juan (Barro y Raíces)</span>
+          <span>● Cielo (Bienestar Natural)</span>
+          <span>● José Paz (Saberes Compartidos)</span>
+        
+          <span>● Ramiro (Conexión Local)</span>
+          <span>● Pedro (Huerta del Camino)</span>
+          <span>● Luis (Aromas Serranos)</span>
+          <span>● Martina (Arte y Naturaleza)</span>
+        
+          <span>● Sofía (Tejidos del Monte)</span>
+          <span>● Tomás (Maderas Vivas)</span>
+          <span>● Camila (Flores de la Sierra)</span>
+        </div>
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================== -->
+
+    <footer class="site-footer">
+
+      <div class="container footer-content">
+
+        <div>
+
+          <span class="footer-brand">
+            Feria en Territorio
+          </span>
+
+          <p>
+            Natural · Local · Artesanal
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <div>
+
+            <span>
+              Explorar
+            </span>
+
+            <a href="#categories">
+              Categorías
+            </a>
+
+            <a href="#collaborators">
+              Colaboradores
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Comunidad
+            </span>
+
+            <a href="#">
+              Instagram
+            </a>
+
+            <a href="#">
+              Contacto
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Información
+            </span>
+
+            <a href="#about">
+              Sobre nosotros
+            </a>
+
+            <a href="#">
+              La feria
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+  </body>
+</html>
