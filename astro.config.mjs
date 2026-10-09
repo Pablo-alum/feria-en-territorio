@@ -2,14 +2,16 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
-
 import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  },
+site: 'https://Pablo-alum.github.io',
+base: '/feria-en-territorio',
 
-  integrations: [vue()]
+vite: {
+plugins: [tailwindcss()]
+},
+
+integrations: [vue()]
 });
