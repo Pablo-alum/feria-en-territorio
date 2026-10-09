@@ -19,12 +19,11 @@
           @focusout="handleFocusOut"
         >
           <a
-              v-for="(category, index) in visibleCategories"
-              :key="category.id + index"
-              :href="`/categorias?categoria=${category.id}`"
-              class="category-card"
-              :class="{ 'category-card--featured': isFeatured(index) }"
-            >
+            v-for="(category, index) in visibleCategories"
+            :key="category.id"
+            :href="`/categorias?categoria=${category.catalogId}`"
+            class="category-card"
+          >
             <div class="category-image">
               <img
                 v-if="category.image"
