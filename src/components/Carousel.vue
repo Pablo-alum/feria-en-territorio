@@ -100,17 +100,15 @@ import {
 
 const images = [
   {
-    src: '../../public/img/comun a-3.jpg.jpeg',
+    src: `${import.meta.env.BASE_URL}/img/comun a-3.jpg.jpeg`,
     alt: 'Vista de la feria en el territorio',
   },
-
   {
-    src: '../../public/img/feria.jpg',
+    src: `${import.meta.env.BASE_URL}/img/feria.jpg`,
     alt: 'Personas participando de la feria',
   },
-
   {
-    src: '../../public/img/feria1.jpg',
+    src: `${import.meta.env.BASE_URL}/img/feria1.jpg`,
     alt: 'Productos y espacios de la feria',
   },
 ]

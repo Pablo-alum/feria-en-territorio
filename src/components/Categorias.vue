@@ -21,7 +21,7 @@
           <a
             v-for="(category, index) in visibleCategories"
             :key="category.id"
-            :href="`/categorias?categoria=${category.catalogId}`"
+            :href="`${baseUrl}categorias/?categoria=${category.catalogId}`"
             class="category-card"
           >
             <div class="category-image">
@@ -111,7 +111,7 @@ const categories = [
     title: 'Productos naturales',
     description:
       'Alimentos y productos elaborados con dedicación, ingredientes naturales y saberes locales.',
-    image: '/img/categorias/productos.jpg',
+    image: `${import.meta.env.BASE_URL}/img/categorias/productos.jpg`,
     imageAlt: 'Productos naturales de la feria',
     color: 'var(--color-primary)',
   },
@@ -122,7 +122,7 @@ const categories = [
     title: 'Artesanías y arte',
     description:
       'Creaciones originales que expresan la identidad, la creatividad y el trabajo artesanal del territorio.',
-    image: '/img/categorias/artesanias.jpg',
+    image: `${import.meta.env.BASE_URL}/img/categorias/artesanias.jpg`,
     imageAlt: 'Artesanías y creaciones de integrantes de la feria',
     color: 'var(--color-accent)',
   },
@@ -133,7 +133,7 @@ const categories = [
     title: 'Cosméticos naturales',
     description:
       'Productos naturales elaborados para el cuidado personal y el bienestar.',
-    image: '/img/categorias/comsetico.jpg',
+    image: `${import.meta.env.BASE_URL}/img/categorias/comsetico.jpg`,
     imageAlt: 'Cosméticos naturales de la feria',
     color: 'var(--color-surface)',
   },
@@ -144,12 +144,14 @@ const categories = [
     title: 'Servicios del territorio',
     description:
       'Personas, emprendimientos y propuestas que comparten sus conocimientos y fortalecen la comunidad.',
-    image: '/img/categorias/productos.jpg',
+    image: `${import.meta.env.BASE_URL}/img/categorias/productos.jpg`,
     imageAlt: 'Servicios y emprendimientos de la comunidad',
     color: 'var(--color-surface)',
   },
 ]
-
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`
 const sectionRef = ref(null)
 const windowWidth = ref(1280)
 const currentPage = ref(0)
