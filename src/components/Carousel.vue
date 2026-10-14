@@ -101,7 +101,7 @@ const baseUrl = import.meta.env.BASE_URL;
 const images = [
   {
     src: `${baseUrl}/img/comun a-3.jpg.jpeg`,
-    alt: 'Vista de la feria en el territorio',
+    alt: 'Vista de la feria en el territorio prueba 1',
   },
   {
     src: `${baseUrl}/img/feria.jpg`,
