@@ -97,18 +97,18 @@ import {
  *
  * Replace these paths with your real images.
  */
-
+const baseUrl = import.meta.env.BASE_URL;
 const images = [
   {
-    src: `${import.meta.env.BASE_URL}/img/comun a-3.jpg.jpeg`,
+    src: `${baseUrl}/img/comun a-3.jpg.jpeg`,
     alt: 'Vista de la feria en el territorio',
   },
   {
-    src: `${import.meta.env.BASE_URL}/img/feria.jpg`,
+    src: `${baseUrl}/img/feria.jpg`,
     alt: 'Personas participando de la feria',
   },
   {
-    src: `${import.meta.env.BASE_URL}/img/feria1.jpg`,
+    src: `${baseUrl}/img/feria1.jpg`,
     alt: 'Productos y espacios de la feria',
   },
 ]

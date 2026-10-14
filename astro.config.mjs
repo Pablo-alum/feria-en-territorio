@@ -7,7 +7,7 @@ import vue from '@astrojs/vue';
 // https://astro.build/config
 export default defineConfig({
 site: 'https://Pablo-alum.github.io',
-base: '/feria-en-territorio',
+base: '/feria-en-territorio/',
 
 vite: {
 plugins: [tailwindcss()]
